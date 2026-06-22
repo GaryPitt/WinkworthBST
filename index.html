@@ -355,7 +355,6 @@ function renderQuestion(){
   document.getElementById('q-counter').textContent=`Property ${idx+1} of ${questions.length}`;
   document.getElementById('progress-bar').style.width=(idx/questions.length*100)+'%';
   renderDots();
-  document.getElementById('q-badge').textContent=q.style;
   document.getElementById('q-body').innerHTML=`
     <div class="q-loc">${q.loc}</div>
     <div class="q-desc">${q.desc}</div>`;
