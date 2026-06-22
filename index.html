@@ -16,10 +16,12 @@ html,body{height:100%;background:#0D1B4D;font-family:'DM Sans',sans-serif}
 
 /* ── DAY SELECTOR ── */
 #dayselect{min-height:100dvh;background:#0D1B4D;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 26px;text-align:center}
-.ds-badge{background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:#C9A84C;font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:18px;font-weight:500}
+.ds-logo{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:6px}
+.ds-logo span{color:#C9A84C}
+.ds-badge{color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:22px;font-weight:500}
 .ds-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#fff;line-height:1.05;margin-bottom:6px}
 .ds-title span{color:#C9A84C}
-.ds-sub{color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:32px}
+.ds-sub{color:rgba(255,255,255,0.55);font-size:15px;margin-bottom:32px;font-weight:500}
 .day-card{width:100%;max-width:340px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:18px 20px;margin-bottom:12px;cursor:pointer;transition:all 0.15s;text-align:left}
 .day-card:active{transform:scale(0.97)}
 .day-card:hover{border-color:#C9A84C;background:rgba(201,168,76,0.08)}
@@ -29,23 +31,25 @@ html,body{height:100%;background:#0D1B4D;font-family:'DM Sans',sans-serif}
 /* ── INTRO ── */
 #intro{min-height:100dvh;background:#0D1B4D;display:flex;flex-direction:column;animation:fadeIn 0.4s ease;display:none}
 .intro-top{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 28px 18px;text-align:center}
-.intro-badge{background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:#C9A84C;font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:18px;font-weight:500}
+.intro-logo{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:4px}
+.intro-logo span{color:#C9A84C}
+.intro-badge{color:rgba(255,255,255,0.5);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;font-weight:500}
 .intro-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:#fff;line-height:1.05;margin-bottom:6px}
 .intro-title span{color:#C9A84C}
-.intro-sub{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:20px}
+.intro-sub{font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:20px;font-weight:500}
 .intro-divider{width:40px;height:1px;background:rgba(201,168,76,0.4);margin:0 auto 20px}
-.intro-desc{color:rgba(255,255,255,0.65);font-size:13.5px;line-height:1.7;max-width:300px;margin:0 auto}
+.intro-desc{color:rgba(255,255,255,0.8);font-size:16px;line-height:1.6;max-width:300px;margin:0 auto;font-weight:500}
 .intro-desc strong{color:#fff;font-weight:600}
 .intro-bottom{background:rgba(0,0,0,0.25);padding:20px 26px 30px;border-top:1px solid rgba(255,255,255,0.08)}
 .how-title{color:#C9A84C;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;margin-bottom:12px;text-align:center}
 .how-steps{display:flex;flex-direction:column;gap:9px;margin-bottom:18px}
 .how-step{display:flex;align-items:flex-start;gap:10px}
 .step-num{width:20px;height:20px;border-radius:5px;background:#C9A84C;color:#0D1B4D;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.step-text{font-size:12.5px;color:rgba(255,255,255,0.65);line-height:1.5}
+.step-text{font-size:15px;color:rgba(255,255,255,0.85);line-height:1.5;font-weight:500}
 .step-text strong{color:#fff;font-weight:500}
 .prize-strip{background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;margin-bottom:18px}
 .prize-icon{font-size:22px;flex-shrink:0}
-.prize-text{font-size:11.5px;color:rgba(255,255,255,0.65);line-height:1.5}
+.prize-text{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.5;font-weight:500}
 .prize-text strong{color:#C9A84C;font-weight:600;display:block;font-size:12.5px;margin-bottom:1px}
 .start-btn{width:100%;padding:15px;background:#C9A84C;color:#0D1B4D;border:none;border-radius:11px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer}
 .start-btn:active{transform:scale(0.97)}
@@ -55,7 +59,7 @@ html,body{height:100%;background:#0D1B4D;font-family:'DM Sans',sans-serif}
 /* ── GAME ── */
 #game{min-height:100dvh;background:#F5F3EF;display:none;flex-direction:column}
 #header{background:#0D1B4D;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.hdr-name{color:#C9A84C;font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.5px}
+.hdr-name{color:#C9A84C;font-family:'Cormorant Garamond',serif;font-size:19px;letter-spacing:0.5px;font-weight:700}
 .hdr-sub{color:rgba(255,255,255,0.35);font-size:8px;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
 .streak-label{color:rgba(255,255,255,0.38);font-size:8px;letter-spacing:1.5px;text-transform:uppercase;text-align:right;margin-bottom:4px}
 #streak-dots{display:flex;gap:4px;justify-content:flex-end}
@@ -67,16 +71,16 @@ html,body{height:100%;background:#0D1B4D;font-family:'DM Sans',sans-serif}
 #q-area{flex:1;padding:14px;display:flex;flex-direction:column;gap:10px;overflow:auto}
 .q-counter{font-size:8.5px;color:#AAA;letter-spacing:1.5px;text-transform:uppercase;text-align:center}
 .q-card{background:#fff;border-radius:13px;overflow:hidden;border:1px solid #E8E2D9}
-.q-img{height:160px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.q-img-emoji{font-size:60px}
-.q-badge{position:absolute;top:10px;left:10px;background:rgba(13,27,77,0.85);color:#C9A84C;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px}
+.q-img{height:170px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#16285E 0%,#0D1B4D 60%,#0A1640 100%)}
+.q-img-icon{width:72px;height:72px;opacity:0.95}
+.q-badge{position:absolute;bottom:12px;left:12px;background:rgba(0,0,0,0.45);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;padding:6px 13px;border-radius:20px}
 .q-body{padding:16px 16px 14px}
-.q-loc{font-family:'Cormorant Garamond',serif;font-size:20px;color:#0D1B4D;font-weight:700;margin-bottom:3px}
-.q-desc{font-size:12px;color:#888;line-height:1.5;margin-bottom:4px}
+.q-loc{font-family:'Cormorant Garamond',serif;font-size:24px;color:#0D1B4D;font-weight:700;margin-bottom:5px}
+.q-desc{font-size:14.5px;color:#3A3A3A;line-height:1.55;margin-bottom:4px;font-weight:500}
 
 /* ── OPTIONS ── */
 .options{display:flex;flex-direction:column;gap:7px}
-.opt-btn{background:#fff;border:1.5px solid #E0DBD0;border-radius:9px;padding:12px 14px;font-family:'DM Sans',sans-serif;font-size:14px;color:#1A1A1A;cursor:pointer;text-align:left;transition:all 0.15s;display:flex;align-items:center;gap:10px}
+.opt-btn{background:#fff;border:2px solid #D8D2C5;border-radius:10px;padding:15px 16px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:#1A1A1A;cursor:pointer;text-align:left;transition:all 0.15s;display:flex;align-items:center;gap:12px}
 .opt-btn:active{transform:scale(0.98)}
 .opt-label{width:22px;height:22px;border-radius:50%;background:#F0EBE3;color:#0D1B4D;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .opt-btn.correct-ans{border-color:#0D1B4D;background:#EEF1FA}
@@ -126,9 +130,10 @@ html,body{height:100%;background:#0D1B4D;font-family:'DM Sans',sans-serif}
 
 <!-- ── DAY SELECTOR ── -->
 <div id="dayselect">
-  <div class="ds-badge">Winkworth × British Summer Time Hyde Park</div>
+  <div class="ds-logo">Winkworth<span>.</span></div>
+  <div class="ds-badge">British Summer Time Hyde Park</div>
   <div class="ds-title">Who&apos;s<br>Headliner<br><span>House</span></div>
-  <div class="ds-sub">Select tonight's headliner</div>
+  <div class="ds-sub">Pick tonight's headliner</div>
   <div class="day-card" onclick="selectDay('maroon5')">
     <div class="day-date">Thursday 3 July</div>
     <div class="day-artist">Maroon 5</div>
@@ -158,26 +163,26 @@ html,body{height:100%;background:#0D1B4D;font-family:'DM Sans',sans-serif}
 <!-- ── INTRO ── -->
 <div id="intro">
   <div class="intro-top">
-    <div class="intro-badge" id="intro-badge">Winkworth × British Summer Time</div>
+    <div class="intro-logo">Winkworth<span>.</span></div>
+    <div class="intro-badge" id="intro-badge">British Summer Time</div>
     <div class="intro-title">Who&apos;s<br>Headliner<br><span>House</span></div>
-    <div class="intro-sub" id="intro-sub">Property meets headliner trivia</div>
+    <div class="intro-sub" id="intro-sub">Tonight's artist</div>
     <div class="intro-divider"></div>
     <div class="intro-desc">
-      We'll describe a property — its style, location and story.<br>
-      Can you guess which American Express presents British Summer Time 2026 artist is most likely to own a home like this?<br>
-      Get <strong>3 in a row</strong> and win a prize from the <strong>Winkworth Hideaway</strong>.
+      Guess who owns the home.<br>
+      Get <strong>3 in a row</strong> to win a prize.
     </div>
   </div>
   <div class="intro-bottom">
     <div class="how-title">How to play</div>
     <div class="how-steps">
-      <div class="how-step"><div class="step-num">1</div><div class="step-text">A property is described — type, era, general area. No exact addresses, ever.</div></div>
-      <div class="how-step"><div class="step-num">2</div><div class="step-text">Choose which American Express presents British Summer Time 2026 artist or band member is most likely to live somewhere like this.</div></div>
-      <div class="how-step"><div class="step-num">3</div><div class="step-text">Get <strong>3 correct in a row</strong> — register and collect your prize from the <strong>Winkworth Hideaway</strong>.</div></div>
+      <div class="how-step"><div class="step-num">1</div><div class="step-text">We describe a property.</div></div>
+      <div class="how-step"><div class="step-num">2</div><div class="step-text">You guess the artist.</div></div>
+      <div class="how-step"><div class="step-num">3</div><div class="step-text"><strong>3 in a row</strong> wins a prize at the <strong>Hideaway</strong>.</div></div>
     </div>
     <div class="prize-strip">
       <div class="prize-icon">🏡</div>
-      <div class="prize-text"><strong>Win a Winkworth Prize</strong>Hit a 3-streak, register your details and collect from the Hideaway. Free to play!</div>
+      <div class="prize-text"><strong>Win a Prize</strong>Get 3 in a row. Free to play.</div>
     </div>
     <button class="start-btn" onclick="startGame()">Let's Play →</button>
     <div class="free-tag">Free to play · No purchase necessary</div>
@@ -189,8 +194,8 @@ html,body{height:100%;background:#0D1B4D;font-family:'DM Sans',sans-serif}
 <div id="game">
   <div id="header">
     <div>
-      <div class="hdr-name" id="game-hdr-name">Who's Headliner House</div>
-      <div class="hdr-sub">Winkworth · British Summer Time</div>
+      <div class="hdr-name" id="game-hdr-name">Winkworth</div>
+      <div class="hdr-sub">Who's Headliner House</div>
     </div>
     <div><div class="streak-label">Streak</div><div id="streak-dots"></div></div>
   </div>
@@ -198,7 +203,7 @@ html,body{height:100%;background:#0D1B4D;font-family:'DM Sans',sans-serif}
   <div id="q-area">
     <div class="q-counter" id="q-counter">Property 1</div>
     <div class="q-card">
-      <div class="q-img" id="q-img"><div class="q-img-emoji">🏠</div><div class="q-badge" id="q-badge">Property</div></div>
+      <div class="q-img" id="q-img"><svg class="q-img-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 30L32 10L56 30" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 26V52C14 53.1 14.9 54 16 54H48C49.1 54 50 53.1 50 52V26" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 54V38H38V54" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="22" r="2" fill="#C9A84C"/></svg><div class="q-badge" id="q-badge">Property</div></div>
       <div class="q-body" id="q-body"></div>
     </div>
     <div id="options-area" class="options"></div>
@@ -335,7 +340,7 @@ function startGame(){
   document.getElementById('intro').style.display='none';
   document.getElementById('game').style.display='flex';
   document.getElementById('game').style.flexDirection='column';
-  document.getElementById('game-hdr-name').textContent='Who\'s Headliner House — ' + ARTIST_DISPLAY[currentDay];
+  document.querySelector('#header .hdr-sub').textContent="Who's Headliner House · " + ARTIST_DISPLAY[currentDay];
   questions=shuffle([...QUESTIONS[currentDay]]);
   idx=0;streak=0;phase='playing';
   renderQuestion();
@@ -358,7 +363,7 @@ function renderQuestion(){
   document.getElementById('q-body').innerHTML=`
     <div class="q-loc">${q.loc}</div>
     <div class="q-desc">${q.desc}</div>`;
-  document.getElementById('q-img').innerHTML=`<div class="q-img-emoji">${q.emoji}</div><div class="q-badge">${q.style}</div>`;
+  document.getElementById('q-img').innerHTML=`<svg class="q-img-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 30L32 10L56 30" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 26V52C14 53.1 14.9 54 16 54H48C49.1 54 50 53.1 50 52V26" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 54V38H38V54" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="22" r="2" fill="#C9A84C"/></svg><div class="q-badge">${q.style}</div>`;
   const labels=['A','B','C'];
   document.getElementById('options-area').innerHTML=q.opts.map((o,i)=>`
     <button class="opt-btn" id="opt-${i}" onclick="pickAnswer(${i})">
@@ -492,3 +497,4 @@ function restart(){
 </script>
 </body>
 </html>
+
