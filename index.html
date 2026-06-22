@@ -71,8 +71,10 @@ html,body{height:100%;background:#0D1B4D;font-family:'DM Sans',sans-serif}
 #q-area{flex:1;padding:14px;display:flex;flex-direction:column;gap:10px;overflow:auto}
 .q-counter{font-size:8.5px;color:#AAA;letter-spacing:1.5px;text-transform:uppercase;text-align:center}
 .q-card{background:#fff;border-radius:13px;overflow:hidden;border:1px solid #E8E2D9}
-.q-img{height:170px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#16285E 0%,#0D1B4D 60%,#0A1640 100%)}
-.q-img-icon{width:72px;height:72px;opacity:0.95}
+.q-img{height:170px;position:relative;overflow:hidden;background:linear-gradient(160deg,#16285E 0%,#0D1B4D 60%,#0A1640 100%)}
+.q-img img{width:100%;height:100%;object-fit:cover;display:block}
+.q-img .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 50%)}
+.q-disclaimer{font-size:9.5px;color:rgba(255,255,255,0.7);position:absolute;bottom:38px;left:12px;right:12px;font-style:italic;letter-spacing:0.2px}
 .q-badge{position:absolute;bottom:12px;left:12px;background:rgba(0,0,0,0.45);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;padding:6px 13px;border-radius:20px}
 .q-body{padding:16px 16px 14px}
 .q-loc{font-family:'Cormorant Garamond',serif;font-size:24px;color:#0D1B4D;font-weight:700;margin-bottom:5px}
@@ -203,7 +205,7 @@ html,body{height:100%;background:#0D1B4D;font-family:'DM Sans',sans-serif}
   <div id="q-area">
     <div class="q-counter" id="q-counter">Property 1</div>
     <div class="q-card">
-      <div class="q-img" id="q-img"><svg class="q-img-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 30L32 10L56 30" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 26V52C14 53.1 14.9 54 16 54H48C49.1 54 50 53.1 50 52V26" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 54V38H38V54" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="22" r="2" fill="#C9A84C"/></svg><div class="q-badge" id="q-badge">Property</div></div>
+      <div class="q-img" id="q-img"></div>
       <div class="q-body" id="q-body"></div>
     </div>
     <div id="options-area" class="options"></div>
@@ -236,57 +238,57 @@ const QUESTIONS = {
 
   maroon5: [
     {desc:"This 1930s ranch-style estate was bought by an American pop star and his supermodel wife in 2019 — purchased from a famous Hollywood acting couple who'd recently divorced. The seller went on to play a famous Marvel superhero on screen.",
-     loc:"Pacific Palisades, Los Angeles, USA", style:"1930s Ranch Estate", emoji:"🌴",
+     loc:"Pacific Palisades, Los Angeles, USA", style:"1930s Ranch Estate", img:"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80", emoji:"🌴",
      opts:["Adam Levine (Maroon 5)","Simon Le Bon (Duran Duran)","Marcus Mumford (Mumford & Sons)"], ans:0,
      fact:"Adam Levine and Behati Prinsloo bought this property from Ben Affleck and Jennifer Garner in 2019 — it was previously owned by Hollywood legend Gregory Peck."},
     {desc:"A grand, gated American estate behind a long hedge-lined driveway — bought by an American singer and his supermodel wife as a quieter escape from busier parts of LA.",
-     loc:"Riviera area, Los Angeles, USA", style:"Gated Estate", emoji:"🚪",
+     loc:"Riviera area, Los Angeles, USA", style:"Gated Estate", img:"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80", emoji:"🚪",
      opts:["Adam Levine (Maroon 5)","Andy Taylor (Duran Duran)","Marcus Mumford (Mumford & Sons)"], ans:0,
      fact:"This was the Levine-Prinsloo family estate before they sold up — described by Levine as a quieter escape from the 'hectic' feel of Beverly Hills."},
     {desc:"An English rock frontman moved his family from one upmarket London area to a quieter, leafier one purely for more privacy — into a 10-room Victorian house.",
-     loc:"Putney, South West London, England", style:"Victorian Family Home", emoji:"🌳",
+     loc:"Putney, South West London, England", style:"Victorian Family Home", img:"https://images.unsplash.com/photo-1570129477492-45c003329943?w=700&q=80", emoji:"🌳",
      opts:["Simon Le Bon (Duran Duran)","Adam Levine (Maroon 5)","Marcus Mumford (Mumford & Sons)"], ans:0,
      fact:"Simon Le Bon moved his family from Chelsea to Putney specifically for more privacy, settling into a 10-room Victorian home."},
     {desc:"A working farm in the English countryside, owned by an English folk-rock frontman who splits his time between here and a London base for work commitments.",
-     loc:"Devon, England", style:"16th Century Farmhouse", emoji:"🚜",
+     loc:"Devon, England", style:"16th Century Farmhouse", img:"https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=700&q=80", emoji:"🚜",
      opts:["Marcus Mumford (Mumford & Sons)","Adam Levine (Maroon 5)","Nick Rhodes (Duran Duran)"], ans:0,
      fact:"Marcus Mumford and his wife bought this farmhouse in Devon in 2013, splitting their time between there and a London home for work."},
   ],
 
   mumford: [
     {desc:"A working farm in the English countryside, owned by the English frontman of a folk-rock band, who splits his time between here and a London base for work.",
-     loc:"Devon, England", style:"16th Century Farmhouse", emoji:"🚜",
+     loc:"Devon, England", style:"16th Century Farmhouse", img:"https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=700&q=80", emoji:"🚜",
      opts:["Marcus Mumford (Mumford & Sons)","Adam Levine (Maroon 5)","John Taylor (Duran Duran)"], ans:0,
      fact:"Marcus Mumford and his wife bought this farmhouse in Devon in 2013, splitting their time between there and a London home for work."},
     {desc:"A Grade I listed English manor with extensive grounds, bought by a bassist from an iconic 1980s English new wave band who wanted UK privacy between world tours.",
-     loc:"Wiltshire, England", style:"Grade I Listed Manor", emoji:"🏰",
+     loc:"Wiltshire, England", style:"Grade I Listed Manor", img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80", emoji:"🏰",
      opts:["John Taylor (Duran Duran)","Marcus Mumford (Mumford & Sons)","Adam Levine (Maroon 5)"], ans:0,
      fact:"Duran Duran bassist John Taylor moved to this historic Wiltshire manor estate with his wife in 2005, choosing it for its privacy when working in the UK."},
     {desc:"A working farm in the English countryside, owned by a former guitarist from a famous 1980s English band — now living a world away from his old London penthouse.",
-     loc:"Gloucestershire, England", style:"Working Farm", emoji:"🐑",
+     loc:"Gloucestershire, England", style:"Working Farm", img:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80", emoji:"🐑",
      opts:["Andy Taylor (Duran Duran)","Marcus Mumford (Mumford & Sons)","Adam Levine (Maroon 5)"], ans:0,
      fact:"Former Duran Duran guitarist Andy Taylor settled on a quiet farm in Gloucestershire, a world away from his old Battersea penthouse."},
     {desc:"An English folk-rock frontman's relatively low-key home in London, used for work trips — his main family base is actually a countryside farmhouse.",
-     loc:"London, England", style:"Family Townhouse", emoji:"🏘️",
+     loc:"London, England", style:"Family Townhouse", img:"https://images.unsplash.com/photo-1449844908441-8195dad5cd97?w=700&q=80", emoji:"🏘️",
      opts:["Marcus Mumford (Mumford & Sons)","Adam Levine (Maroon 5)","Simon Le Bon (Duran Duran)"], ans:0,
      fact:"Mumford & Sons frontman Marcus Mumford splits his time between a London home and the family's Devon countryside farmhouse."},
   ],
 
   duranduran: [
     {desc:"An English rock frontman moved his family from one upmarket London area to a quieter, leafier one purely for more privacy — into a 10-room Victorian house.",
-     loc:"Putney, South West London, England", style:"Victorian Family Home", emoji:"🌳",
+     loc:"Putney, South West London, England", style:"Victorian Family Home", img:"https://images.unsplash.com/photo-1570129477492-45c003329943?w=700&q=80", emoji:"🌳",
      opts:["Simon Le Bon (Duran Duran)","Marcus Mumford (Mumford & Sons)","Adam Levine (Maroon 5)"], ans:0,
      fact:"Simon Le Bon moved his family from Chelsea to Putney specifically for more privacy, settling into a 10-room Victorian home."},
     {desc:"A Grade I listed English manor with extensive grounds, bought by a bassist from an iconic 1980s English new wave band who wanted UK privacy between world tours.",
-     loc:"Wiltshire, England", style:"Grade I Listed Manor", emoji:"🏰",
+     loc:"Wiltshire, England", style:"Grade I Listed Manor", img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80", emoji:"🏰",
      opts:["John Taylor (Duran Duran)","Marcus Mumford (Mumford & Sons)","Adam Levine (Maroon 5)"], ans:0,
      fact:"Bassist John Taylor moved to this historic Wiltshire manor estate with his wife in 2005, choosing it for privacy when working in the UK."},
     {desc:"A working farm in the English countryside, owned by a former guitarist from a famous 1980s English band — now living a world away from his old London penthouse.",
-     loc:"Gloucestershire, England", style:"Working Farm", emoji:"🐑",
+     loc:"Gloucestershire, England", style:"Working Farm", img:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80", emoji:"🐑",
      opts:["Andy Taylor (Duran Duran)","Simon Le Bon (Duran Duran)","Marcus Mumford (Mumford & Sons)"], ans:0,
      fact:"Former Duran Duran guitarist Andy Taylor settled on a quiet farm in Gloucestershire, a world away from his old Battersea penthouse."},
     {desc:"A grand penthouse in a converted Victorian building that once served as an orphanage and later a WWI hospital — once home to a guitarist famous for huge 1980s hits, who reportedly played cricket inside it.",
-     loc:"Battersea / Clapham, London, England", style:"Converted Victorian Penthouse", emoji:"🏢",
+     loc:"Battersea / Clapham, London, England", style:"Converted Victorian Penthouse", img:"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=700&q=80", emoji:"🏢",
      opts:["Andy Taylor (Duran Duran)","John Taylor (Duran Duran)","Adam Levine (Maroon 5)"], ans:0,
      fact:"Andy Taylor's former London penthouse was famous among friends — the flat was so large he reportedly used to play cricket inside it."},
   ],
@@ -363,7 +365,7 @@ function renderQuestion(){
   document.getElementById('q-body').innerHTML=`
     <div class="q-loc">${q.loc}</div>
     <div class="q-desc">${q.desc}</div>`;
-  document.getElementById('q-img').innerHTML=`<svg class="q-img-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 30L32 10L56 30" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 26V52C14 53.1 14.9 54 16 54H48C49.1 54 50 53.1 50 52V26" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 54V38H38V54" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="22" r="2" fill="#C9A84C"/></svg><div class="q-badge">${q.style}</div>`;
+  document.getElementById('q-img').innerHTML=`<img src="${q.img}" alt="${q.style}" onerror="this.src='https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80'"><div class="overlay"></div><div class="q-disclaimer">Image for illustration only — not the actual property</div><div class="q-badge">${q.style}</div>`;
   const labels=['A','B','C'];
   document.getElementById('options-area').innerHTML=q.opts.map((o,i)=>`
     <button class="opt-btn" id="opt-${i}" onclick="pickAnswer(${i})">
@@ -497,4 +499,3 @@ function restart(){
 </script>
 </body>
 </html>
-
